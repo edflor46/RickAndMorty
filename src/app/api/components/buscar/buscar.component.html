@@ -1,0 +1,13 @@
+<form class="form">
+  <mat-form-field class="input_buscar">
+    <input
+      type="text"
+      placeholder="Buscar un personaje..."
+      aria-label="Number"
+      matInput
+      #inputSearch
+      (keyup)="onSearch(inputSearch.value)"
+    />
+  </mat-form-field>
+</form>
+

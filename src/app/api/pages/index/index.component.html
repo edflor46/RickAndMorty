@@ -1,0 +1,12 @@
+<ng-container *ngIf="!movil; else screenSM">
+  <div (window:resize)="onResize()">
+    <app-desktop></app-desktop>
+  </div>
+</ng-container>
+
+<ng-template #screenSM>
+  <div (window:resize)="onResize()">
+    <app-movil></app-movil>
+   
+  </div>
+</ng-template>

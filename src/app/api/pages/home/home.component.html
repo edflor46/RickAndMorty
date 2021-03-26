@@ -1,0 +1,27 @@
+<div class="banner">
+    <h1>Rick And Morty</h1>
+</div>
+
+<mat-divider></mat-divider>
+<!--Cards Personajes-->
+<h2>API Rick And Morty</h2>
+
+<div
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="20px">
+
+
+  <div fxFlex="25" fxFlex.lg="20" fxFlex.sm="25" *ngFor="let personaje of personajes">
+    <app-card [personaje]="personaje"></app-card>
+  </div>
+</div>
+
+<a routerLink="../personajes" class="btn" mat-raised-button color="primary">
+  Ver todos los personajes
+</a>
+
+<app-footer></app-footer>
+
+

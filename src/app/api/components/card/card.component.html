@@ -1,0 +1,37 @@
+<a [routerLink]="['../personaje', personaje.id]">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title
+        ><h1 class="titulo">
+          <strong>{{ personaje.name }}</strong>
+        </h1>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+    <br />
+    <img class="img_card" matCardImage [src]="personaje.image" [alt]="personaje.name" />
+
+    <img/>
+    <mat-card-content>
+      <div>
+        <div fxFlex="50">
+          <h3>
+            <strong>Estado: </strong>
+            <small>{{ personaje.status }}</small>
+          </h3>
+        </div>
+        <div fxFlex="50">
+          <h3>
+            <strong>Especie: </strong>
+            <small>{{ personaje.species }}</small>
+          </h3>
+        </div>
+      </div>
+      <h3>
+        <strong>Creado: </strong>
+        <small>{{ personaje.created | date }}</small>
+      </h3>
+    </mat-card-content>
+  </mat-card>
+</a>

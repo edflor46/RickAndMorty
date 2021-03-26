@@ -1,0 +1,24 @@
+<mat-toolbar class="tool">
+    <img class="logo" src="assets/img/logo.png" alt="logo">
+      <span class="spacer"></span>
+
+      <div class="menu_desktop">
+        
+        <a routerLink="./home"
+           routerLinkActive="active" 
+           [routerLinkActiveOptions]="{exact:true}" >
+          <span>Inicio</span>
+        </a>
+    
+        <a routerLink="./personajes"
+           routerLinkActive="active" 
+            >
+          <span>Personajes</span>
+        </a>
+    
+      </div>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

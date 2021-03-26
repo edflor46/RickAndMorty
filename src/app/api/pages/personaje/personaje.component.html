@@ -1,0 +1,88 @@
+<mat-grid-list fxLayoutAlign="center" cols="1" *ngIf="!personaje; else loaded">
+
+    <img src="assets/img/gif.gif" alt="" />
+    <span>Cargando...</span>
+  
+</mat-grid-list>
+
+<ng-template #loaded>
+  <div class="personaje" fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+    <div fxFlex="50">
+      <h1>
+        <strong>{{ personaje?.name }}</strong>
+      </h1>
+      <mat-divider></mat-divider>
+      <div class="gradient">
+        <img
+          [src]="personaje?.image"
+          class="avatar_personaje"
+          [alt]="personaje?.name"
+        />
+      </div>
+    </div>
+
+    <div fxFlex="50">
+      <h1>
+        <strong>Informacion</strong>
+      </h1>
+      <mat-divider></mat-divider>
+      <div class="informacion">
+        <div fxLayoutAlign="space-between">
+          <h3>Id:</h3>
+          <span>
+            <strong>{{ personaje?.id }}</strong>
+          </span>
+        </div>
+
+        <div fxLayoutAlign="space-between">
+          <h3>Nombre:</h3>
+          <span>
+            <strong>{{ personaje?.name }}</strong>
+          </span>
+        </div>
+
+        <div fxLayoutAlign="space-between">
+          <h3>Especie:</h3>
+          <span>
+            <strong>{{ personaje?.species }}</strong>
+          </span>
+        </div>
+
+        <div fxLayoutAlign="space-between">
+          <h3>Estado:</h3>
+          <span>
+            <strong>{{ personaje?.status }}</strong>
+          </span>
+        </div>
+
+        <div fxLayoutAlign="space-between">
+          <h3>Origen:</h3>
+          <span>
+            <strong>{{ personaje?.origin.name }}</strong>
+          </span>
+        </div>
+
+        <div fxLayoutAlign="space-between">
+          <h3>Ubicacion:</h3>
+          <span>
+            <strong>{{ personaje?.location.name }}</strong>
+          </span>
+        </div>
+
+        <div fxLayoutAlign="space-between">
+          <h3>Tipo:</h3>
+          <span>
+            <strong>{{ personaje?.type }}</strong>
+          </span>
+        </div>
+
+        <div fxLayoutAlign="space-between">
+          <h3>Fecha de Creacion:</h3>
+          <span>
+            <strong>{{ personaje?.created | date:'MMMddyyyy' }}</strong>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

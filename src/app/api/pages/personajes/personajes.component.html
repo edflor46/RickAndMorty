@@ -1,0 +1,33 @@
+<div class="input_buscar">
+  <app-buscar></app-buscar>
+</div>
+
+<mat-grid-list fxLayoutAlign="center" cols="1" *ngIf="!personajes.length; else loaded">
+
+  <img src="assets/img/gif.gif" alt="" />
+  <span>Sin resultados</span>
+
+</mat-grid-list>
+
+<ng-template #loaded>
+
+<div
+style="height: 100%;"
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="20px"
+  infinite-scroll
+  (scrolled)="scroll()">
+  
+  <div
+    fxFlex="25"
+    fxFlex.lg="20"
+    fxFlex.sm="25"
+    *ngFor="let personaje of personajes"
+  >
+    <app-card [personaje]="personaje"></app-card>
+  </div>
+</div>
+</ng-template>
+
